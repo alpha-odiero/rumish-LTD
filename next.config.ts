@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
 
+const basePath = process.env.BASE_PATH || "";
+
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/rumish-LTD",
-  assetPrefix: "/rumish-LTD/",
+  basePath: basePath || undefined,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
   trailingSlash: true,
   images: {
     unoptimized: true,
